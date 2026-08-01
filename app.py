@@ -561,7 +561,7 @@ def teams_top_contributors(selected_team):
 
 def main():
 
-    afcon_png = 'https://upload.wikimedia.org/wikipedia/en/thumb/6/66/2023_Africa_Cup_of_Nations_logo.svg/1200px-2023_Africa_Cup_of_Nations_logo.svg.png'
+    afcon_png = 'https://upload.wikimedia.org/wikipedia/en/thumb/6/66/2023_Africa_Cup_of_Nations_logo.svg/500px-2023_Africa_Cup_of_Nations_logo.svg.png'
     st.sidebar.image(afcon_png, width=100, use_column_width=True, output_format='auto')
 
     def load_lottieurl(url: str):
