@@ -1,0 +1,28 @@
+{
+  "competition_year": 2013,
+  "goal_timing": null,
+  "attendance_per_game": 23000.0,
+  "attendance_source": {
+    "url": "https://www.rsssf.org/tables/2013a.html",
+    "quote": "19/01/2013, Johannesburg, FNB Stadium 'Soccer City', 50000\n19/01/2013, Johannesburg, FNB Stadium 'Soccer City', 25000\n23/01/2013, Durban, Moses Mabhida Stadium, 40000\n23/01/2013, Durban, Moses Mabhida Stadium, 25000\n27/01/2013, Durban, Moses Mabhida Stadium, 45000\n27/01/2013, Port Elizabeth, Nelson Mandela Bay Stadium, 20000\n20/01/2013, Port Elizabeth, Nelson Mandela Bay Stadium, 7000\n20/01/2013, Port Elizabeth, Nelson Mandela Bay Stadium, 20000\n24/01/2013, Port Elizabeth, Nelson Mandela Bay Stadium, 8000\n24/01/2013, Port Elizabeth, Nelson Mandela Bay Stadium, 12000\n28/01/2013, Port Elizabeth, Nelson Mandela Bay Stadium, 10000\n28/01/2013, Durban, Moses Mabhida Stadium, 8000\n21/01/2013, Mbombela, Mbombela Stadium, 10000\n21/01/2013, Mbombela, Mbombela Stadium, 8500\n25/01/2013, Mbombela, Mbombela Stadium, 25000\n25/01/2013, Mbombela, Mbombela Stadium, 35000\n29/01/2013, Mbombela, Mbombela Stadium, 8000\n29/01/2013, Phokeng, Royal Bafokeng Stadium, 15000\n22/01/2013, Phokeng, Royal Bafokeng Stadium, 2000\n22/01/2013, Phokeng, Royal Bafokeng Stadium, 10000\n26/01/2013, Phokeng, Royal Bafokeng Stadium, 20000\n26/01/2013, Phokeng, Royal Bafokeng Stadium, 35000\n30/01/2013, Phokeng, Royal Bafokeng Stadium, 5000\n30/01/2013, Mbombela, Mbombela Stadium, 7500\n02/02/2013, Port Elizabeth, Nelson Mandela Bay Stadium, 8000\n02/02/2013, Durban, Moses Mabhida Stadium, 45000\n03/02/2013, Phokeng, Royal Bafokeng Stadium, 25000\n03/02/2013, Mbombela, Mbombela Stadium, 27000\n06/02/2013, Durban, Moses Mabhida Stadium, 54000\n06/02/2013, Mbombela, Mbombela Stadium, 35000\n09/02/2013, Port Elizabeth, Nelson Mandela Bay Stadium, 6000\n10/02/2013, Johannesburg, FNB Stadium 'Soccer City', 85000",
+    "method": "Sum the 32 published finals date/venue/attendance headings (736000) and divide by 32 matches. RSSSF is a specialist football-statistics archive; published rounded values are retained, not replaced by ticket distribution figures."
+  },
+  "revenue": {
+    "million": null,
+    "estimated": false,
+    "basis": "No trustworthy tournament-specific revenue figure established. Prize money, host budgets and CAF fiscal revenue are not tournament revenue. BBC ticket prices cannot establish revenue: distributed tickets include free tickets and do not imply attendance. Contemporary Reuters source returned HTTP 401 twice.",
+    "sources": [
+      {
+        "url": "https://www.bbc.co.uk/sport/football/21429095",
+        "quote": "The Confederation of African Football (Caf) will say these finals were the best attended ever, with nearly 800,000 tickets either sold or distributed."
+      }
+    ]
+  },
+  "logo_url": "https://upload.wikimedia.org/wikipedia/en/d/d0/2013_Africa_Cup_of_Nations.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+  "notes": [
+    "Goal timing unavailable per user.",
+    "Attendance is RSSSF published match-heading total / 32; BBC tickets sold or distributed are not counted as spectators.",
+    "No verified 2013 tournament-specific revenue obtained. Host budget, prize pool, multiyear broadcast rights, CAF fiscal totals, and later-edition revenue are not substituted.",
+    "Browser teardown/navigation failures were recovered using Scrapling page_action DOM capture; raw sources and exact execution failures retained."
+  ]
+}

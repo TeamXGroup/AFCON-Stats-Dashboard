@@ -1,0 +1,48 @@
+{
+  "competition_year": 2019,
+  "goal_timing": {
+    "segments": [
+      "0-15",
+      "16-30",
+      "31-45",
+      "46-60",
+      "61-75",
+      "76-90"
+    ],
+    "goals": [
+      11,
+      9,
+      23,
+      14,
+      25,
+      19
+    ],
+    "percentages": [
+      11.0,
+      9.0,
+      23.0,
+      14.0,
+      25.0,
+      19.0
+    ],
+    "source": "FootyStats, selected 2019 season ID 2017",
+    "source_url": "https://footystats.org/international/africa-cup-of-nations#2019",
+    "coverage_note": "Published six-bin total 101; edition overview total 102. Counts and percentages are preserved verbatim."
+  },
+  "attendance_per_game": 17924.096153846152,
+  "attendance_source": {
+    "url": "https://www.rsssf.org/tables/2019a-det.html",
+    "quote": "21/06/2019 - Cairo [International Stadium], 73.299\n22/06/2019 - Cairo [International Stadium], 1.083\n26/06/2019 - Cairo [International Stadium], 73.589\n26/06/2019 - Cairo [International Stadium], 74.219\n30/06/2019 - Cairo [International Stadium], 74.566\n30/06/2019 - Cairo [30 June Stadium], 4.364\n22/06/2019 - Alexandria [Alexandria Stadium], 3.192\n22/06/2019 - Alexandria [Alexandria Stadium], 5.342\n26/06/2019 - Alexandria [Alexandria Stadium], 10.388\n27/06/2019 - Alexandria [Alexandria Stadium], 4.900\n30/06/2019 - Alexandria [Alexandria Stadium], 9.895\n30/06/2019 - Cairo [Al-Salam Stadium], 5.753\n23/06/2019 - Cairo [30 June Stadium], 7.249\n23/06/2019 - Cairo [30 June Stadium], 8.071\n27/06/2019 - Cairo [30 June Stadium], 14.765\n27/06/2019 - Cairo [30 June Stadium], 7.233\n01/07/2019 - Cairo [30 June Stadium], 13.224\n01/07/2019 - Cairo [Al-Salam Stadium], 8.921\n23/06/2019 - Cairo [Al-Salam Stadium], 6.857\n24/06/2019 - Cairo [Al-Salam Stadium], 4.961\n28/06/2019 - Cairo [Al-Salam Stadium], 27.500\n28/06/2019 - Cairo [Al-Salam Stadium], 16.090\n01/07/2019 - Cairo [Al-Salam Stadium], 12.098\n01/07/2019 - Cairo [30 June Stadium], 7.530\n24/06/2019 - Suez [Suez Stadium], 7.345\n24/06/2019 - Suez [Suez Stadium], 6.202\n28/06/2019 - Suez [Suez Stadium], 16.085\n29/06/2019 - Suez [Suez Stadium], 10.120\n02/07/2019 - Suez [Suez Stadium], 7.732\n02/07/2019 - Ismailia [Ismailia Stadium], 8.135\n25/06/2019 - Ismailia [Ismailia Stadium], 5.983\n25/06/2019 - Ismailia [Ismailia Stadium], 8.094\n29/06/2019 - Ismailia [Ismailia Stadium], 16.724\n29/06/2019 - Ismailia [Ismailia Stadium], 9.212\n02/07/2019 - Ismailia [Ismailia Stadium], 14.120\n02/07/2019 - Suez [Suez Stadium], 6.905\n05/07/2019 - Cairo [Al-Salam Stadium], 7.500\n05/07/2019 - Cairo [International Stadium], 6.950\n06/07/2019 - Alexandria [Alexandria Stadium], 10.000\n06/07/2019 - Cairo [International Stadium], 75.000\n07/07/2019 - Alexandria [Alexandria Stadium], 5.890\n07/07/2019 - Cairo [30 June Stadium], 8.205\n08/07/2019 - Suez [Suez Stadium], 7.672\n08/07/2019 - Ismailia [Ismailia Stadium], 8.890\n10/07/2019 - Cairo [30 June Stadium], 5.798\n10/07/2019 - Cairo [International Stadium], 48.343\n11/07/2019 - Suez [Suez Stadium], 8.233\n11/07/2019 - Cairo [Al-Salam Stadium], 7.568\n14/07/2019 - Cairo [30 June Stadium], 9.143\n14/07/2019 - Cairo [International Stadium], 49.775\n17/07/2019 - Cairo [Al-Salam Stadium], 6.340\n19/07/2019 - Cairo [International Stadium], 75.000",
+    "method": "Sum of all 52 unique RSSSF match-heading attendance values (932053) divided by 52; periods are thousands separators."
+  },
+  "revenue": {
+    "million": null,
+    "estimated": false,
+    "basis": "No retrieved trustworthy source establishing 2019 tournament revenue; prize budgets and CAF annual revenue excluded.",
+    "sources": []
+  },
+  "logo_url": "https://thumb.wikimedia.org/wikipedia/en/thumb/5/5c/2019_Africa_Cup_of_Nations_logo.svg/960px-2019_Africa_Cup_of_Nations_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
+  "notes": [
+    "Wikipedia edition page retained for historical appearances, titles and logo. Its attendance summary is not accepted as CAF/BBC/Reuters/official-report evidence."
+  ]
+}

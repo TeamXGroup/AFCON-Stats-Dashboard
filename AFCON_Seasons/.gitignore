@@ -1,0 +1,5 @@
+__pycache__/
+vendor/
+pip-*/
+playwright-artifacts-*/
+playwright_chromiumdev_profile-*/

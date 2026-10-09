@@ -1,0 +1,16 @@
+{
+  "competition_year": 2025,
+  "provenance": "Figures transcribed from the two screenshots supplied by the user.",
+  "goal_timing": {
+    "segments": ["0-15", "16-30", "31-45", "46-60", "61-75", "76-90"],
+    "goals": [8, 21, 22, 21, 21, 24],
+    "percentages": [6.8, 17.9, 18.8, 17.9, 17.9, 20.5],
+    "source": "The supplied screenshot cites FootyStats AFCON 2025, cross-checked against SoccerStats.",
+    "coverage_note": "The supplied six-interval table totals 117 goals; it does not account for all 121 tournament goals. Percentages use the 117-goal timing total."
+  },
+  "attendance_per_game": 25770,
+  "revenue": {
+    "estimated_million": 142.03,
+    "basis": "Like-for-like commercial revenue estimate: the 2023 $74.75 million figure increased by 90%, rounded to $142.03 million. The supplied screenshot attributes the growth rate to CAF."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "competition_year": 2015,
+  "goal_timing": null,
+  "attendance_per_game": null,
+  "attendance_source": null,
+  "revenue": {
+    "million": null,
+    "estimated": false,
+    "basis": "No trustworthy 2015 tournament-specific revenue figure established after researching CAF official finance documents, contemporary Guardian/PA reporting and economics coverage. Reported prize money and Morocco damages/compensation are not revenue; CAF fiscal totals and multiyear rights contracts are not substituted.",
+    "sources": [
+      {
+        "url": "https://www.cafonline.com/inside-caf/about-us/official-documents/finance/",
+        "quote": "AUDITED FINANCIAL STATEMENTS 2023-2025 | CAF competitions-prize-money: (Update) August 2026 | Financial Statement 2024 | The Audited Statement of Accounts 2022-2023 | Audited Financial Statement 2022 | CAF Financial Statement - June 2021 | CAF 2025-2026 BUDGET | CAF 2024-2025 BUDGET | CAF 2023-2024 BUDGET | CAF 2022-2023 BUDGET"
+      },
+      {
+        "url": "https://www.theguardian.com/football/2015/feb/06/morocco-banned-and-fined-africa-cup-of-nations",
+        "quote": "Morocco have been banned from the next two African Nations Cups and fined $1m (£656,000) for pulling out of hosting this year’s competition, the Confederation of African Football has announced."
+      },
+      {
+        "url": "https://www.theguardian.com/football/2015/feb/06/morocco-banned-and-fined-africa-cup-of-nations",
+        "quote": "Caf also ordered the Moroccan Football Federation to pay compensation of €8m (£5.9m) for losses sustained by CAF, its stakeholders and partners as a result of its decision not to host the tournament."
+      },
+      {
+        "url": "https://stage.venturesafrica.com/a-game-of-numbers-breaking-down-the-economics-of-afcon-2015/",
+        "quote": "Eventual champions Ivory Coast emerged as the new kings of the continent and were rewarded with a $1.5 million prize money. The money goes to the Ivorian Football Association which will then, if prior agreements exist, pay out bonuses to members of the 2015 African Cup of Nations winning squad. The total prize money pot for AFCON 2015 participants amounted to $10 million."
+      },
+      {
+        "url": "https://stage.venturesafrica.com/a-game-of-numbers-breaking-down-the-economics-of-afcon-2015/",
+        "quote": "While the 2015 edition of the African Cup of Nations went on in Equatorial Guinea, erstwhile hosts Morocco were sanctioned for ‘refusing’ to abide by the hosting agreement signed with CAF and as a result, the football body announced that Morocco had been banned from the next two AFCON tournaments (2017 and 2019). CAF also slapped Morocco with a fine of $1 million for its withdrawal and in addition demanded a total compensation package of around $9 million ‘for all material damage sustained by CAF, stakeholders and partners’."
+      }
+    ]
+  },
+  "logo_url": "https://thumb.wikimedia.org/wikipedia/en/thumb/4/4e/2015_Africa_Cup_of_Nations_logo.png/250px-2015_Africa_Cup_of_Nations_logo.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+  "notes": [
+    "Goal timing intentionally unavailable per user instruction.",
+    "RSSSF detailed attendance was rejected: 32 headings contain 31 unique matches, repeating Congo-Gabon and omitting Mali-Cameroon. FBref has attendance for 30 of 32 fixtures, omitting Mali-Cameroon and Congo DR-Côte d'Ivoire. No complete trustworthy tournament attendance total established; average remains null.",
+    "Team labels preserve FBref: Equ. Guinea means Equatorial Guinea; Congo DR means DR Congo; Cabo Verde means Cape Verde. Historical aliases are documented in build.py.",
+    "Player rows represent players used, not all registered squad members.",
+    "No provider-unavailable numeric cell is invented or converted to zero.",
+    "RSSSF specifies no extra time in the third-place match; FBref standard minutes retain different provider match-duration accounting. Raw source statistics are preserved."
+  ]
+}

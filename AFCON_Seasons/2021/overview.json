@@ -1,0 +1,53 @@
+{
+  "competition_year": 2021,
+  "goal_timing": {
+    "segments": [
+      "0-15",
+      "16-30",
+      "31-45",
+      "46-60",
+      "61-75",
+      "76-90"
+    ],
+    "goals": [
+      11,
+      14,
+      16,
+      18,
+      19,
+      21
+    ],
+    "percentages": [
+      11,
+      14,
+      16,
+      18,
+      19,
+      21
+    ],
+    "source": "FootyStats, Africa Cup of Nations 2021, season ID 6838",
+    "source_url": "https://footystats.org/international/africa-cup-of-nations#2021",
+    "coverage_note": "Published Goals Per 15 min counts use 99 Goals: 11,14,16,18,19,21. Published percentages sum to 99% due to rounding. The same selected season reports 100 Goals in 52 matches. Six bins cover 0-90 only; provider does not explain the one-goal timing gap. Counts and percentages preserved verbatim, not normalized. HTML title stays 2025 after AJAX; body explicitly says 2021 and season ID is 6838, with Feb 6 Senegal-Egypt final."
+  },
+  "attendance_per_game": null,
+  "attendance_source": null,
+  "revenue": {
+    "million": null,
+    "estimated": false,
+    "basis": "Finals-only AFCON 2021 revenue is not separately isolated. CAF audited accounts FY ended 30 June 2022, note 3, printed p.12/PDF p.14 report USD 79.721m for combined CAN/QCAN (AFCON and qualifiers), not annual CAF total. Combined competition figure is preserved in supplemental_evidence.json and not relabelled finals-only revenue.",
+    "sources": [
+      {
+        "url": "https://www.cafonline.com/media/nm4ks3ds/audited-financial-statement-2022-english.pdf#page=14",
+        "quote": "Note 3. REVENUE FROM COMPETITIONS; Year ended 30 June 2022; All amount in USD “000”; CAN/QCAN: Net contract revenues 79,721; Unallocated direct revenues –; Total Revenue 79,721."
+      }
+    ]
+  },
+  "logo_url": "https://upload.wikimedia.org/wikipedia/fr/0/06/Coupe_d%27Afrique_des_nations_de_football_Cameroun_2021.png",
+  "notes": [
+    "AFCON 2021 was played 9 January-6 February 2022.",
+    "FBref 2021 history link redirects to pages titled 2022; standings ID results20216560_overall used.",
+    "FootyStats selected season 2021, ID 6838, reports 100 goals in 52 matches; timing denominator is 99 and published bin percentages sum to 99%.",
+    "Attendance remains null: retrieved RSSSF has 52 match records but no attendance; BBC reports only 60-80% capacity limits; CAF report has no mens AFCON tournament attendance total.",
+    "Finals-only revenue remains null: official combined CAN/QCAN USD 79.721m is documented, but qualifiers are not separated."
+  ]
+}

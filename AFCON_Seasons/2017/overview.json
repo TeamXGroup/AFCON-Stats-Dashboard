@@ -1,0 +1,29 @@
+{
+  "competition_year": 2017,
+  "goal_timing": null,
+  "attendance_per_game": null,
+  "attendance_source": null,
+  "revenue": {
+    "million": null,
+    "estimated": false,
+    "basis": "No trustworthy tournament-specific 2017 revenue figure established. Official CAF finance index retrieved; listed statements cover 2021 and later, so no 2017 tournament figure can be inferred. Prize money is not revenue; CAF fiscal totals and host infrastructure budgets excluded.",
+    "sources": [
+      {
+        "url": "https://www.cafonline.com/inside-caf/about-us/official-documents/finance/",
+        "quote": "CAF Financial Statement - June 2021"
+      },
+      {
+        "url": "https://www.bbc.co.uk/sport/football/37929355",
+        "quote": "The 2017 Africa Cup of Nations winners will receive $4 million, whereas Ivory Coast won $1.5m in 2015."
+      }
+    ]
+  },
+  "logo_url": "https://thumb.wikimedia.org/wikipedia/en/thumb/8/86/2017_Africa_Cup_of_Nations_logo.png/250px-2017_Africa_Cup_of_Nations_logo.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+  "notes": [
+    "Goal timing unavailable by user instruction.",
+    "RSSSF final details reviewed for complete attendance coverage; see supplement_results.json.",
+    "Raw FBref responses and page_action DOM captures retained; callback HTTP status is unknown when teardown did not finish.",
+    "FBref overall standings describe shootout matches as draws; no shootout goals included.",
+    "Provider-unavailable fields remain blank; see missing_fields.json."
+  ]
+}

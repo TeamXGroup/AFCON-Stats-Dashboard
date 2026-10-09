@@ -1,0 +1,42 @@
+{
+  "competition_year": 2012,
+  "goal_timing": null,
+  "attendance_per_game": 16066.625,
+  "attendance_source": {
+    "url": "https://www.rsssf.org/tables/2012a-det.html",
+    "quote": "21/01/2012 - Bata [Estadio de Bata], 35.000\n21/01/2012 - Bata [Estadio de Bata], 17.500\n25/01/2012 - Bata [Estadio de Bata], 1.500\n25/01/2012 - Bata [Estadio de Bata], 35.000\n29/01/2012 - Malabo [Estadio de Malabo], 44.000\n29/01/2012 - Bata [Estadio de Bata], 10.000\n22/01/2012 - Malabo [Estadio de Malabo], 5.000\n22/01/2012 - Malabo [Estadio de Malabo], 17.000\n26/01/2012 - Malabo [Estadio da Malabo], 5.000\n26/01/2012 - Malabo [Estadio de Malabo], 5.000\n30/01/2012 - Bata [Estadio de Bata], 132\n30/01/2012 - Malabo [Estadio de Malabo], 1.500\n23/01/2012 - Libreville [Stade d'Angondjé], 38.000\n23/01/2012 - Libreville [Stade d'Angondjé], 28.000\n27/01/2012 - Libreville [Stade d'Angondjé], 5.000\n27/01/2012 - Libreville [Stade d'Angondjé], 38.000\n31/01/2012 - Franceville [Stade de Franceville], 22.000\n31/01/2012 - Libreville [Stade d'Angondjé], 4.000\n24/01/2012 - Franceville [Stade de Franceville], 5.000\n24/01/2012 - Franceville [Stade de Franceville], 10.000\n28/01/2012 - Franceville [Stade de Franceville], 2.000\n28/01/2012 - Franceville [Stade de Franceville], 5.000\n01/02/2012 - Libreville [Stade d'Angondjé], 20.000\n01/02/2012 - Franceville [Stade de Franceville], 5.500\n04/02/2012 - Bata [Estadio de Bata], 1.000\n04/02/2012 - Malabo [Estadio de Malabo], 25.000\n05/02/2012 - Libreville [Stade d'Angondjé], 30.000\n05/02/2012 - Franceville [Stade de Franceville], 8.000\n08/02/2012 - Bata [Estadio de Bata], 12.000\n08/02/2012 - Libreville [Stade d'Angondjé], 32.000\n11/02/2012 - Malabo [Estadio de Malabo], 15.000\n12/02/2012 - Libreville [Stade d'Angondjé], 32.000",
+    "method": "Sum of all 32 unique published RSSSF attendance headings (514132) divided by 32. Periods are thousands separators. Values are the archive's published figures, including rounded counts, not an independently audited gate total."
+  },
+  "revenue": {
+    "million": null,
+    "estimated": false,
+    "basis": "Unavailable: no trustworthy revenue total specific to AFCON 2012. CAF fiscal equity/cash/surplus, budget, prize money and multiedition rights contracts are not tournament revenue.",
+    "sources": [
+      {
+        "url": "https://www.insideworldfootball.com/2012/02/13/caf-announces-record-earnings/",
+        "quote": "The Confederation of African Football (CAF) said it now had equity of $55.9 million (£35.6 million/€42.5 million) and a cash balance of $47.9 million (£30.5 million/€36.4 million) as of June 30 last year."
+      },
+      {
+        "url": "https://www.insideworldfootball.com/2012/02/13/caf-announces-record-earnings/",
+        "quote": "A seven-year TV and marketing deal worth some $140 million (£89 million/€106 million) was signed in 2010."
+      },
+      {
+        "url": "https://www.insideworldfootball.com/2012/02/13/caf-announces-record-earnings/",
+        "quote": "Sportfive, part of Lagardere Sports, paid $46.8 million (£29.8 million/€35.6 million) for four successive editions of the African Nations Cup finals, starting with last year’s event in Angola (opening ceremony pictured below)."
+      },
+      {
+        "url": "https://www.insideworldfootball.com/2012/02/13/caf-announces-record-earnings/",
+        "quote": "“Our financial performance was close to forecast, giving a surplus of $5.8 million (£3.7 million/€4.4 million) against a budgeted $5 million (£3.2 million/€3.8 million), primarily due to better cost management,” Suketu Patel, chairman of CAF’s finance committee, told the CAF congress in Gabon."
+      }
+    ]
+  },
+  "logo_url": "https://upload.wikimedia.org/wikipedia/en/0/03/2012_Africa_Cup_of_Nations_logo.png",
+  "notes": [
+    "Goal timing intentionally unavailable per user.",
+    "Attendance is null: CAF historical match report returned 404, BBC final report supplies no tournament total, and the secondary Wikipedia attendance is internally inconsistent and uncorroborated. See supplemental_research.json.",
+    "Revenue is null and not estimated. Available reported CAF financial figures concern fiscal finances or multi-edition/multi-year contracts.",
+    "Logo URL is the exact competition image src in retained 2012 FBref edition HTML.",
+    "302 used players and 16 teams; player-attributed goals 75 plus one own goal equals 76 tournament goals.",
+    "Attendance uses the complete RSSSF finals match-heading list. Conflicting Wikipedia summaries are not substituted; archive match counts are preserved verbatim."
+  ]
+}

@@ -10,9 +10,11 @@ from streamlit_lottie import st_lottie
 import streamlit_shadcn_ui as ui
 import random
 import plotly.express as px
+from pathlib import Path
+from season_data import COMPETITION_DATASETS, SEASON_YEARS, competition_summary, format_goal_average, load_overview
 
    
-st.set_page_config(page_title='AFCON23 DASHBOARD',
+st.set_page_config(page_title='AFCON DASHBOARD',
                    page_icon='⚽',
                    layout='wide',
                    initial_sidebar_state="expanded",)
@@ -22,12 +24,44 @@ def load_data(path: str):
     data = pd.read_csv(path)
     return data
 
-squads_df = load_data('https://raw.githubusercontent.com/TeamXGroup/AFCON23-Streamlit-Dashboard/main/Datasets/AFCON%20Squads%20Stats.csv')
-players_df = load_data('https://raw.githubusercontent.com/TeamXGroup/AFCON23-Streamlit-Dashboard/main/Datasets/AFCON%20Players%20Stats.csv')
+APP_DIR = Path(__file__).resolve().parent
+
+
+def reset_team_selection():
+    # A team or comparison from the previous competition may not participate.
+    st.session_state.pop('selected_team', None)
+    st.session_state.pop('comparison_teams', None)
+
+season_years_desc = sorted(SEASON_YEARS, reverse=True)
+
+competition_year = st.sidebar.selectbox(
+    'Select AFCON Competition',
+    season_years_desc,
+    index=season_years_desc.index(2025),
+    key='competition_year',
+    on_change=reset_team_selection,
+)
+
+squads_path, players_path = COMPETITION_DATASETS[competition_year]
+squads_df = load_data(squads_path)
+players_df = load_data(players_path)
+overview_data = load_overview(competition_year)
 
 
 
 # PLOTS FUNCTIONS :
+
+def unavailable_chart(title, detail='Statistics unavailable for this edition', height=500):
+    fig = go.Figure()
+    fig.update_layout(
+        title=title, title_x=0.3, width=600, height=height,
+        plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)',
+        xaxis=dict(visible=False), yaxis=dict(visible=False),
+    )
+    fig.add_annotation(text=detail, xref='paper', yref='paper',
+                       x=0.5, y=0.5, showarrow=False)
+    st.plotly_chart(fig, use_container_width=True)
+
 
 def goals():
     # Sample data (teams, goals scored, and goals conceded)
@@ -87,8 +121,12 @@ def goals():
     st.plotly_chart(fig, use_container_width=True)
 def possession():
     # Sample data (teams and possessions)
-    teams = squads_df['Team'].tolist()
-    possession = squads_df['Possession'].tolist()
+    available = squads_df.dropna(subset=['Possession'])
+    if available.empty:
+        unavailable_chart('Possession by Team (Heatmap)')
+        return
+    teams = available['Team'].tolist()
+    possession = available['Possession'].tolist()
 
     # Sort teams and possession in descending order of possession
     teams_sorted, possession_sorted = zip(*sorted(zip(teams, possession), key=lambda x: x[1], reverse=True))
@@ -116,10 +154,13 @@ def possession():
     # Show figure
     st.plotly_chart(fig, use_container_width=True)
 def goals_timing():
-    # Sample data (number of goals and percentages in 15-minute segments)
-    segments = ['0-15', '16-30', '31-45', '46-60', '61-75', '76-90']
-    goals = [11, 12, 21, 20, 23, 31]  # Number of goals in each segment
-    percentages = [9.2, 10.1, 17.6, 16.8, 19.3, 26.1]  # Percentages of goals in each segment
+    timing = overview_data.get('goal_timing')
+    if not timing:
+        unavailable_chart('Goals Timing', f'Goal timing unavailable for AFCON {competition_year}')
+        return
+    segments = timing['segments']
+    goals = timing['goals']
+    percentages = timing['percentages']
 
     # Find the index of the maximum value in the goals list
     max_index = goals.index(max(goals))
@@ -156,10 +197,14 @@ def goals_timing():
     # Show figure
     st.plotly_chart(fig, use_container_width=True)
 def fouls_cards():
-    teams = squads_df['Team'].tolist()
-    fouls_committed = squads_df['Fouls Commited'].tolist()
-    yellow_cards = squads_df['Yellow Cards'].tolist()
-    red_cards = squads_df['Red Cards'].tolist()
+    available = squads_df.dropna(subset=['Fouls Commited', 'Yellow Cards', 'Red Cards'])
+    if available.empty:
+        unavailable_chart('Fouls Committed vs Total Cards')
+        return
+    teams = available['Team'].tolist()
+    fouls_committed = available['Fouls Commited'].tolist()
+    yellow_cards = available['Yellow Cards'].tolist()
+    red_cards = available['Red Cards'].tolist()
 
     # Calculate total cards (yellow + red)
     total_cards = [yc + rc for yc, rc in zip(yellow_cards, red_cards)]
@@ -357,6 +402,12 @@ def radar_chart(selected_team, teams_to_display):
 
     team_data = squads_df[squads_df['Team'].isin(selected_teams)]
 
+    # Missing provider statistics are omitted, never displayed as zero.
+    metrics = [metric for metric in metrics if team_data[metric].notna().all()]
+    if not metrics:
+        unavailable_chart('Radar Chart for Metrics Comparison')
+        return
+
     data = []
     for team_name in selected_teams:
         team_data_selected = team_data[team_data['Team'] == team_name]
@@ -401,6 +452,10 @@ def teams_top_tacklers(selected_team):
 
     # Filter data for the selected country
     selected_team_data = players_df[players_df["Team"] == selected_team].sort_values(by='Tackles Won', ascending=False).head(10)
+    selected_team_data = selected_team_data.dropna(subset=['Tackles Won'])
+    if selected_team_data.empty:
+        unavailable_chart(f'Top 10 Players by Tackles Won in {selected_team}')
+        return
 
     # Create a scatter plot
     fig = px.scatter(selected_team_data, x='Player', y='Tackles Won', color='Tackles Won',
@@ -419,7 +474,10 @@ def teams_top_tacklers(selected_team):
 def shots_on_target():
 
     # Sort the teams by shots on target % and select the top 10 teams
-    teams = squads_df.sort_values(by='Shots on Target %', ascending=False)
+    teams = squads_df.dropna(subset=['Shots on Target %']).sort_values(by='Shots on Target %', ascending=False)
+    if teams.empty:
+        unavailable_chart('Shots on Target % by Team')
+        return
 
     # Create a scatter plot
     fig = px.scatter(teams, x='Team', y='Shots on Target %', color='Shots on Target %',
@@ -561,8 +619,30 @@ def teams_top_contributors(selected_team):
 
 def main():
 
-    afcon_png = 'https://upload.wikimedia.org/wikipedia/en/thumb/6/66/2023_Africa_Cup_of_Nations_logo.svg/500px-2023_Africa_Cup_of_Nations_logo.svg.png'
-    st.sidebar.image(afcon_png, width=100, use_column_width=True, output_format='auto')
+    afcon_png = overview_data.get('logo_url')
+    if afcon_png:
+        historical_logo = competition_year <= 2021
+
+        if historical_logo:
+            img_width = 180 if competition_year == 2021 else 150
+
+            _, col, _ = st.sidebar.columns([1, 3, 1])
+
+            with col:
+                st.image(
+                    afcon_png,
+                    width=img_width,
+                    output_format='auto'
+                )
+        else:
+            st.sidebar.image(
+                afcon_png,
+                width=100,
+                use_column_width=True,
+                output_format='auto'
+            )
+    else:
+        st.sidebar.markdown(f'⚽ **AFCON {competition_year}**')
 
     def load_lottieurl(url: str):
         r = requests.get(url)
@@ -579,19 +659,19 @@ def main():
             lottie_animation = load_lottieurl("https://lottie.host/7eff8345-9933-4bde-b787-2256aa370845/6nG4melsvc.json")
             st_lottie(lottie_animation, loop=False, height=100, width=100)
         with col2:
-            st.markdown("<h1><span style='color:#158106; font-size:40px; font-family:Arial, sans-serif'>AFCON</span><span style='color:#FC8600; font-size:40px; font-family:Arial, sans-serif'>23</span> Overview</h1>", unsafe_allow_html=True)
+            st.markdown(f"<h1><span style='color:#158106; font-size:40px; font-family:Arial, sans-serif'>AFCON</span><span style='color:#FC8600; font-size:40px; font-family:Arial, sans-serif'>{str(competition_year)[-2:]}</span> Overview</h1>", unsafe_allow_html=True)
         
-        for i in range(6):
+        for i in range(4):
             st.sidebar.write("##")
-        st.sidebar.write("©2024, Developed By TEAMX")
+        st.sidebar.write("© Developed By TEAMX")
 
         col1, col2, col3 = st.columns(3)
         with col1:
-            ui.metric_card(title="Teams", content="24")
+            ui.metric_card(title="Teams", content=str(len(squads_df)))
         with col2:
-            ui.metric_card(title="Matches Played", content="52")
+            ui.metric_card(title="Matches Played", content=str(int(squads_df['Matches Played'].sum() / 2)))
         with col3:
-            ui.metric_card(title="Players Participated", content="605")  
+            ui.metric_card(title="Players Participated", content="605" if competition_year == 2023 else str(len(players_df)))
         
 
         goals()
@@ -606,9 +686,35 @@ def main():
         st.markdown("---")
 
         col1, col2, col3 = st.columns(3)
-        col1.metric(label = "_**Goals per match**_", value = "2.29", delta = "+ 0.37 from Last Competition")
-        col2.metric("_**Attendance Per Game**_", "27,223", "+ 4337 from Last Competition")
-        col3.metric("_**Total Revenue**_", "$74.75 million", "- 4.95 from Last Competition")
+        if competition_year == 2023:
+            col1.metric(label = "_**Goals per match**_", value = "2.29", delta = "+ 0.37 from Last Competition")
+            col2.metric("_**Attendance Per Game**_", "27,223", "+ 4,337 from Last Competition")
+            col3.metric("_**Total Revenue (estimated)**_", "$74.75 million", "- $4.95 million from Last Competition")
+        else:
+            summary = competition_summary(competition_year, squads_df)
+            position = SEASON_YEARS.index(competition_year)
+            previous_year = SEASON_YEARS[position - 1] if position else None
+            previous = competition_summary(previous_year) if previous_year else {}
+
+            def change(field, money=False, digits=2):
+                current, earlier = summary[field], previous.get(field)
+                if current is None or earlier is None:
+                    return None
+                difference = current - earlier
+                if money:
+                    return f"{'+' if difference >= 0 else '-'} ${abs(difference):.2f} million from {previous_year}"
+                value = f'{difference:+,.0f}' if digits == 0 else f'{difference:+.2f}'
+                return f'{value} from {previous_year}'
+
+            col1.metric("_**Goals per match**_", format_goal_average(summary['goals_per_match']),
+                        change('goals_per_match'))
+            attendance = summary['attendance']
+            col2.metric("_**Attendance Per Game**_", 'N/A' if attendance is None else f'{attendance:,.0f}',
+                        change('attendance', digits=0))
+            revenue = summary['revenue']
+            revenue_label = 'Total Revenue (estimated)' if overview_data['revenue'].get('estimated') else 'Total Revenue'
+            col3.metric(f'_**{revenue_label}**_', 'N/A' if revenue is None else f'${revenue:.2f} million',
+                        change('revenue', money=True))
 
         st.markdown("---")
 
@@ -627,7 +733,8 @@ def main():
         # Display a select box in the sidebar for choosing a team
         selected_team = st.sidebar.selectbox(
             'Select a Team',
-            squads_df['Team']
+            squads_df['Team'],
+            key='selected_team',
         )
 
         col1, col2 = st.columns((1,7))
@@ -654,7 +761,7 @@ def main():
             st.sidebar.write(f"<b>Times Won:</b> <b>{stars}</b>", unsafe_allow_html=True)
             for i in range(3): 
                 st.sidebar.write("##")
-            st.sidebar.write("©2024, Developed By TEAMX")
+            st.sidebar.write("©Developed By TEAMX")
 
             col1, col2, col3 = st.columns(3)
             #team_data = squads_df[squads_df['Team'] == selected_team]
@@ -681,7 +788,7 @@ def main():
         col1,col2 = st.columns((3, 1))
         with col2:
             teams = squads_df['Team'].unique()
-            teams_to_display = st.multiselect('Select Teams to Compare:', [team for team in teams if team != selected_team])
+            teams_to_display = st.multiselect('Select Teams to Compare:', [team for team in teams if team != selected_team], key='comparison_teams')
         with col1:
             radar_chart(selected_team, teams_to_display)
 

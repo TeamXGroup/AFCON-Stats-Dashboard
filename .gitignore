@@ -1,0 +1,12 @@
+.conda/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.streamlit/secrets.toml
+AFCON_Seasons/**/chromium_*/
+AFCON_Seasons/**/chromium_chrome_*/
+AFCON_Seasons/**/local_dependencies/
+AFCON_Seasons/**/_vendor/
+AFCON_Seasons/**/playwright_chromiumdev_profile-*/
+AFCON_Seasons/**/playwright-artifacts-*/
+AFCON_Seasons/**/pip-*/

@@ -1,0 +1,26 @@
+{
+  "competition_year": 2010,
+  "goal_timing": null,
+  "attendance_per_game": 18435.0,
+  "attendance_source": {
+    "url": "https://www.rsssf.org/tables/2010a-det.html",
+    "quote": "10/01/2010 - Luanda [Estadio 11 de Novembre], 45.000\n11/01/2010 - Luanda [Estadio 11 de Novembre], 1.500\n14/01/2010 - Luanda [Estadio 11 de Novembre], 4.000\n14/01/2010 - Luanda [Estadio 11 de Novembre], 48.500\n18/01/2010 - Luanda [Estadio 11 de Novembre], 40.000\n18/01/2010 - Cabinda [Estadio Chimandela], 21.000\n11/01/2010 - Cabinda [Estadio Chimandela], 5.000\n15/01/2010 - Cabinda [Estadio Chimandela], 23.000\n19/01/2010 - Cabinda [Estadio Chimandela], 1.500\n12/01/2010 - Benguela [Estadio Nacional Ombaka], 18.000\n12/01/2010 - Benguela [Estadio Nacional Ombaka], 15.000\n16/01/2010 - Benguela [Estadio Nacional Ombaka], 8.000\n16/01/2010 - Banguela [Estadio Nacional Ombaka], 16.000\n20/01/2010 - Benguela [Estadio Nacional Ombaka], 12.500\n20/01/2010 - Lubango [Estadio Alto da Cheta], 8.050\n13/01/2010 - Lubango [Estadio Alto da Cheta], 15.000\n13/01/2010 - Lubango [Estadio Alto da Cheta], 17.000\n17/01/2010 - Lubango [Estadio Alto da Cheta], 16.000\n17/01/2010 - Lubango [Estadio Alto da Cheta], 15.000\n21/01/2010 - Lubango [Estadio Alto da Cheta], 19.000\n21/01/2010 - Benguela [Estadio Nacional Ombaka], 11.065\n24/01/2010 - Luanda [Estadio 11 de Novembre], 50.000\n24/01/2010 - Cabinda [Estadio Chimandela], 10.000\n25/01/2010 - Benguela [Estadio Nacional Ombaka], 12.000\n25/01/2010 - Lubango [Estadio Alto da Cheta], 10.000\n28/01/2010 - Luanda [Estadio 11 de Novembre], 7.500\n28/01/2010 - Benguela [Estadio Nacional Ombaka], 25.000\n30/01/2010 - Benguela [Estadio Nacional Ombaka], 15.000\n31/01/2010 - Luanda [Estadio 11 de Novembre], 45.000",
+    "method": "Sum the 29 finals match-heading attendance counts (dot is a thousands separator): 534615 total / 29 played matches = 18435.00000000. RSSSF is an independent specialist football-statistics archive, not a CAF audited attendance report."
+  },
+  "revenue": {
+    "million": null,
+    "estimated": false,
+    "basis": "Unavailable: no verified tournament-specific revenue figure located in accessible trustworthy reporting. Financial search endpoints were blocked, irrelevant, or unavailable; not evidence of zero revenue.",
+    "sources": []
+  },
+  "logo_url": "https://upload.wikimedia.org/wikipedia/en/f/f3/2010_Africa_Cup_of_Nations_logo.svg",
+  "notes": [
+    "Goal timing intentionally unavailable as requested.",
+    "15 teams played; Togo qualified but withdrew before playing and is excluded from statistical rows.",
+    "RSSSF-derived attendance total is 534615, across 29 played matches; average is 18435.00000000.",
+    "Wikipedia edition infobox reports 543,500 (18,741 per match), which differs from the retained RSSSF match-level sum. The overview uses the independently auditable RSSSF sum, not that unsourced infobox total.",
+    "Tournament-specific revenue could not be established from trustworthy retrieved reporting; million is null, not zero. No prize money, construction spending, organising budget, or multiyear CAF rights revenue substituted.",
+    "FBref supplies 67 credited player goals plus 4 own goals = 71 overall GF/GA. Some external records credit Cameroon’s quarter-final opener differently; FBref source attribution is preserved.",
+    "Clean Sheets is retained verbatim from the FBref keeper table despite apparent source discrepancies (for example Egypt has 2 there versus four scoreline clean sheets). Other statistics are not silently repaired."
+  ]
+}
